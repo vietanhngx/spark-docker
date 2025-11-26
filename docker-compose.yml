@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  spark-master:
+    container_name: spark-master
+    build: .
+    command: master
+    ports:
+      - '8080:8080'  # Web UI quản lý Cluster
+      - '7077:7077'  # Cổng kết nối nội bộ
+    volumes:
+      - ./data:/opt/spark/data
+      - spark-logs:/opt/spark/spark-events
+
+  spark-worker:
+    container_name: spark-worker
+    build: .
+    command: worker
+    depends_on:
+      - spark-master
+    volumes:
+      - ./data:/opt/spark/data
+      - spark-logs:/opt/spark/spark-events
+
+  spark-history-server:
+    container_name: spark-history
+    build: .
+    command: history
+    depends_on:
+      - spark-master
+    ports:
+      - '18080:18080' # Web UI xem lịch sử chạy job
+    volumes:
+      - spark-logs:/opt/spark/spark-events
+
+volumes:
+  spark-logs:

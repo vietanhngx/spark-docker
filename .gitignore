@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+spark-logs/
+data/*.csv
+data/*.parquet
+data/*.json
+!data/*.py
+.idea/
+.vscode/
