@@ -25,7 +25,10 @@ Môi trường phát triển Apache Spark sử dụng Docker Compose.
    docker exec spark-master bin/spark-submit \
      --master spark://spark-master:7077 \
      /opt/spark/data/<ten_file_cua_ban>.py
-2. Giải thích chi tiết câu lệnh
+2. Hoặc
+   ```bash
+   docker exec spark-master python /opt/spark/data/<ten_file_cua_ban>.py
+3. Giải thích chi tiết câu lệnh
 
 | Thành phần lệnh | Giải thích ý nghĩa |
 | :--- | :--- |
