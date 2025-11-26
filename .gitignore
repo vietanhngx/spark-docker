@@ -3,9 +3,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 spark-logs/
-data/*.csv
-data/*.parquet
-data/*.json
-!data/*.py
+data/*
+!data/.gitkeep
 .idea/
 .vscode/
