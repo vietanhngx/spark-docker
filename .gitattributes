@@ -1,0 +1,5 @@
+# Mặc định để Git tự xử lý
+* text=auto
+
+# Riêng file shell script (.sh) BẮT BUỘC dùng LF
+*.sh text eol=lf
